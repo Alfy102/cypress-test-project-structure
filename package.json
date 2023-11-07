@@ -1,23 +1,43 @@
 {
-  "name": "cypress-test-tiny",
-  "version": "1.0.0",
-  "description": "Small project for quickly testing Cypress.io test runner",
-  "scripts": {
-    "cypress:run": "cypress run",
-    "cypress:open": "cypress open",
-    "cypress:verify": "cypress verify",
-    "cypress:version": "cypress version",
-    "cypress:info": "cypress info",
-    "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
-  },
-  "keywords": [],
-  "author": "Cypress-io",
-  "license": "ISC",
+  "name": "rc-e2e",
+  "version": "0.0.1",
+  "private": true,  
   "devDependencies": {
+    "axios": "^1.4.0",
+    "cypress": "^13.4.0",
+    "cypress-if": "^1.10.5",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-terminal-report": "^5.3.2",
+    "cypress-wait-if-happens": "^1.3.3",
+    "eslint-plugin-cypress": "^2.13.3",
+    "eslint-plugin-jsdoc": "^46.4.5",
+    "rimraf": "^5.0.1",
+    "unzipper": "^0.10.14",
+    "zip-local": "^0.3.5"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+  "scripts": {
+    "project1Gui": "cypress open  --project project1",
+    "project2Gui": "cypress open  --project project2",
+    "project1Test": "node launcher.js -- project=project1",
+    "project2Test": "node launcher.js -- project=project2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/**/*.js"
+  },
+  "resolutions": {
+    "ansi-regex": "5.0.1"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "bluebird": "^3.7.2",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-multi-reporters": "^1.6.3",
+    "eslint-plugin-jest": "^27.2.1",
+    "junit-report-merger": "^6.0.1",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "uuid": "^9.0.0"
   }
 }
